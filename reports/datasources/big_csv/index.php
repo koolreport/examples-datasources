@@ -1,1 +1,5 @@
-<?php include "../../../helpers/run.example.php";?>
+<?php
+require_once "SakilaRental.php";
+
+$report = new SakilaRental;
+$report->run()->render();

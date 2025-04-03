@@ -8,8 +8,8 @@
             "Files": {
                 "CSV": "/reports/datasources/csv_report/",
                 "Excel": "/reports/datasources/excel_report/",
-                "Big_CSV": "/reports/datasources/big_csv/",
-                "Big_Excel": "/reports/datasources/big_excel/"
+                "Big CSV": "/reports/datasources/big_csv/",
+                "Big Excel": "/reports/datasources/big_excel/"
             },
             "PDO": {
                 "MySQL": "/reports/datasources/pdo_mysql/",

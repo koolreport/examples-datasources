@@ -1,6 +1,3 @@
-<?php
-$menu = json_decode(file_get_contents("./reports.json"),true);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,14 +6,11 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
     <meta name="description" content="KoolReport is an intuitive and flexible Open Source PHP Reporting Framework for faster and easier data report delivery.">
     <meta name="author" content="KoolPHP Inc">
     <meta name="keywords" content="php reporting framework">
-    <!-- <link rel="shortcut icon" href="./assets/images/bar.png"> -->
     <title>KoolReport Examples &amp; Demonstration</title>
 
     <link href="./assets/fontawesome/font-awesome.min.css" rel="stylesheet">
-    <!-- <link href="./assets/simpleline/simple-line-icons.min.css" rel="stylesheet"> -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/main.css" rel="stylesheet">
-
 
     <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="./assets/js/bootstrap.bundle.min.js"></script>
@@ -29,7 +23,6 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
 </style>
 <script>
     function toggleExpandCollapse(i) {
-        // console.log('toggleExpandCollapse: ', i);
         i.classList.toggle('fa-plus-square-o');
         i.classList.toggle('fa-minus-square-o');
     }
@@ -45,20 +38,9 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
         </div>
     </nav>
     <main class="container">
-        <!-- <h1 class="mt-5">Examples &amp; Demonstration</h1>
-        <p class="lead">
-            This demo contains series of examples to guide the usage of KoolReport and its extended packages.
-            KoolReport is an intuitive and flexible Open-Source PHP Reporting Framework for faster and easier report delivery. It gives you full control of data process as well as data visualization. It is fast, simple and can be extended in many ways.
-        </p>
-        <p>
-            <i><b>Note:</b> If an example in this demonstration does not work, the reason is that it
-            requires either database or extended packages to be installed. You may find all sample databases
-            in <code>examples/databases</code> folder, please import them to your database system and change
-            connection at <code>config.php</code>.
-            If missing package is the issue, you can get them <a href="https://www.koolreport.com/packages">here</a>.
-            </i>
-        </p> -->
         <?php
+        $root_url = ".";
+        $menu = json_decode(file_get_contents("./reports.json"),true);
         foreach($menu as $section_name=>$section)
         {
         ?>
@@ -70,7 +52,6 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
                 ?>
                     <div class="col-md-3 example-group col-sm-6">
                         <h5>
-                        <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
                         <?php echo (strpos($group_name,"</i>")>0)?$group_name:"<i class='icon-layers'></i>$group_name"; ?></h5>
                         <ul class="list-unstyled">
                         <?php
@@ -80,7 +61,6 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
                             if(is_string($surl))
                             {
                             ?>
-                                <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
                                 <li><a href="<?php echo $root_url.$surl; ?>"><?php echo $sname; ?></a></li>
                             <?php
                             }
@@ -92,14 +72,12 @@ $menu = json_decode(file_get_contents("./reports.json"),true);
                                 $idName = str_replace("&", "", $idName);
                             ?>
                                 <li>
-                                <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
                                 <strong><i class='fa fa-minus-square-o' data-toggle="collapse" data-target="#<?php echo $idName; ?>" onclick="toggleExpandCollapse(this);"></i> <?php echo $sname; ?></strong>
                                     <ul class="list-unstyled collapse show" id="<?php echo $idName; ?>">
                                     <?php
                                     foreach($surl as $tname=>$turl)
                                     {
                                     ?>
-                                        <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
                                         <li><a href="<?php echo $root_url.$turl; ?>"><?php echo $tname; ?></a></li>
                                     <?php    
                                     }

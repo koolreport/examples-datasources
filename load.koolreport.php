@@ -23,4 +23,4 @@ function getRootUrl()
 
 $root_url = getRootUrl();
 ?>
-<link href="<?php echo $root_url; ?>/assets/css/bootstrap.min.css" rel="stylesheet">;
+<link href="<?php echo $root_url; ?>/assets/css/bootstrap.min.css" rel="stylesheet">
