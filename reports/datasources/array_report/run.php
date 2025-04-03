@@ -1,7 +1,4 @@
 <?php
-echo '<link href="../../../assets/theme/css/bootstrap.min.css" rel="stylesheet">';
-require_once "../../../../koolreport/core/autoload.php";
-
 require_once "MyReport.php";
 $report = new MyReport(array(
     "data"=>array(

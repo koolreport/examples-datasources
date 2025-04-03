@@ -1,4 +1,5 @@
 <?php
+require_once "../../../load.koolreport.php";
 
 use \koolreport\KoolReport;
 use \koolreport\processes\Group;
