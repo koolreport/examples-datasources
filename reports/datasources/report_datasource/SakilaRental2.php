@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../../load.koolreport.php";
+require_once "../../../common.php";
 
 class SakilaRental2 extends \koolreport\KoolReport
 {

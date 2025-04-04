@@ -40,7 +40,39 @@
     <main class="container">
         <?php
         $root_url = ".";
-        $menu = json_decode(file_get_contents("./reports.json"),true);
+$reportJson = <<<EOD
+{
+    "Core": {
+        "<i class='fa fa-database'></i>DataSources": {
+            "Variables_based": {
+                "Array": "/reports/datasources/array_report/",
+                "Report": "/reports/datasources/report_datasource/"
+            },
+            "Files": {
+                "CSV": "/reports/datasources/csv_report/",
+                "Excel": "/reports/datasources/excel_report/",
+                "Big CSV": "/reports/datasources/big_csv/",
+                "Big Excel": "/reports/datasources/big_excel/"
+            },
+            "PDO": {
+                "MySQL": "/reports/datasources/pdo_mysql/",
+                "PostgreSQL": "/reports/datasources/pdo_postgresql/",
+                "SQLServer": "/reports/datasources/pdo_sqlserver/",
+                "Oracle": "/reports/datasources/pdo_oracle/"
+            },
+            "Native_databases": {
+                "MySQL": "/reports/datasources/mysql_report/",
+                "PostgreSQL": "/reports/datasources/postgresql_report/",
+                "SQLServer": "/reports/datasources/sqlserver_report/",
+                "Oracle": "/reports/datasources/oracle_report/",
+                "MongoDB": "/reports/datasources/mongodb_report/"
+            }
+        }
+    }
+}        
+EOD;
+        // $menu = json_decode(file_get_contents("./reports.json"),true);
+        $menu = json_decode($reportJson, true);
         foreach($menu as $section_name=>$section)
         {
         ?>

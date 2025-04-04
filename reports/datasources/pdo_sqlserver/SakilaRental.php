@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../../load.koolreport.php";
+require_once "../../../common.php";
 
 use \koolreport\KoolReport;
 use \koolreport\processes\Filter;
@@ -13,7 +13,7 @@ class SakilaRental extends KoolReport
     public function settings()
     {
         //Get default connection from config.php
-        $config = include "../../../config.php";
+        $config = $GLOBALS['config'];
 
         return array(
             "dataSources"=>array(
