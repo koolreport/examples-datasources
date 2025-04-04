@@ -15,7 +15,7 @@ class MyReport extends \koolreport\KoolReport
             "dataSources"=>array(
                 "excel"=>array(
                     "class"=>ExcelDataSource::class,
-                    "filePath"=>dirname(__FILE__)."/../../../databases/customer_product_dollarsales2.xlsx",
+                    "filePath"=>dirname(__FILE__)."/../../../data/customer_product_dollarsales2.xlsx",
                 )
             )
         );
