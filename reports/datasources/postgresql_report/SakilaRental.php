@@ -7,6 +7,7 @@ use \koolreport\processes\Filter;
 use \koolreport\processes\TimeBucket;
 use \koolreport\processes\Group;
 use \koolreport\processes\Limit;
+use \koolreport\processes\ColumnMeta;
 
 class SakilaRental extends KoolReport
 {

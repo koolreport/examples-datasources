@@ -7,14 +7,11 @@
 
     <div style="margin-left: auto; margin-right: auto; width: 50%;">
         <?php
-        \koolreport\chartjs\PieChart::create(array(
+        \koolreport\widgets\google\PieChart::create(array(
             "dataStore"=>$this->dataStore('sale_by_month'),  
             "columns"=>array(
                 "payment_date"=>array(
-                    "label"=>"Month",
-                    "type"=>"datetime",
-                    "format"=>"Y-n",
-                    "displayFormat"=>"F, Y",
+                    "label"=>"Month"
                 ),
                 "amount"=>array(
                     "label"=>"Amount",

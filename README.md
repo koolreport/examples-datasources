@@ -20,12 +20,12 @@ Open and edit the file `common.php` to require the `autload.php` file
 which includes KoolReport installation:
 
 ```
-require_once "path/to/koolreport/core/autoload.php";
-//or
 require_once "path/to/vendor/autoload.php";
+// or
+// require_once "path/to/koolreport/core/autoload.php";
 ```
 
-Finally, put the repository source code into your web server and serve it
+Finally, put the repository source code on your web server and serve it
 
 # Source code structure
 

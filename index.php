@@ -44,23 +44,20 @@
             {
                 "Core": {
                     "<i class='fa fa-database'></i>DataSources": {
-                        "Variables_based": {
+                        "Variables based": {
                             "Array": "/reports/datasources/array_report/",
                             "Report": "/reports/datasources/report_datasource/"
                         },
                         "Files": {
-                            "CSV": "/reports/datasources/csv_report/",
-                            "Excel": "/reports/datasources/excel_report/",
-                            "Big CSV": "/reports/datasources/big_csv/",
-                            "Big Excel": "/reports/datasources/big_excel/"
+                            "CSV": "/reports/datasources/csv_report/"
                         },
-                        "PDO": {
+                        "PDO connection": {
                             "MySQL": "/reports/datasources/pdo_mysql/",
                             "PostgreSQL": "/reports/datasources/pdo_postgresql/",
                             "SQLServer": "/reports/datasources/pdo_sqlserver/",
                             "Oracle": "/reports/datasources/pdo_oracle/"
                         },
-                        "Native_databases": {
+                        "Native DB connections": {
                             "MySQL": "/reports/datasources/mysql_report/",
                             "PostgreSQL": "/reports/datasources/postgresql_report/",
                             "SQLServer": "/reports/datasources/sqlserver_report/",
@@ -71,6 +68,7 @@
                 }
             }        
         EOD;
+
         // $menu = json_decode(file_get_contents("./reports.json"),true);
         $menu = json_decode($reportJson, true);
         foreach($menu as $section_name=>$section)

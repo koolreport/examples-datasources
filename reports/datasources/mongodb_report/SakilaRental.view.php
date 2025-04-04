@@ -7,7 +7,7 @@
 
     <div style="margin-left: auto; margin-right: auto; width: 50%;">
         <?php
-        \koolreport\chartjs\LineChart::create(array(
+        \koolreport\widgets\google\LineChart::create(array(
             "dataStore"=>$this->dataStore('sale_by_month'),  
             "columns"=>array(
                 "payment_date"=>array(
