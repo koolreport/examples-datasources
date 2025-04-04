@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,6 +28,7 @@
         i.classList.toggle('fa-minus-square-o');
     }
 </script>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a id="baseUrl" class="navbar-brand" href=".">KoolReport Examples</a>
@@ -69,64 +71,56 @@
             }        
         EOD;
 
-        // $menu = json_decode(file_get_contents("./reports.json"),true);
         $menu = json_decode($reportJson, true);
-        foreach($menu as $section_name=>$section)
-        {
+        foreach ($menu as $section_name => $section) {
         ?>
             <h4 class="section-header"><?php echo $section_name; ?></h4>
             <div class="row">
                 <?php
-                foreach($section as $group_name=>$group)
-                {
+                foreach ($section as $group_name => $group) {
                 ?>
                     <div class="col-md-3 example-group col-sm-6">
                         <h5>
-                        <?php echo (strpos($group_name,"</i>")>0)?$group_name:"<i class='icon-layers'></i>$group_name"; ?></h5>
+                            <?php echo (strpos($group_name, "</i>") > 0) ? $group_name : "<i class='icon-layers'></i>$group_name"; ?></h5>
                         <ul class="list-unstyled">
-                        <?php
-                        // echo "group: "; print_r($group);
-                        foreach($group as $sname=>$surl)
-                        {
-                            if(is_string($surl))
-                            {
-                            ?>
-                                <li><a href="<?php echo $root_url.$surl; ?>"><?php echo $sname; ?></a></li>
                             <?php
-                            }
-                            else
-                            {
-                                $idName = $sname;
-                                $idName = str_replace(" ", "", $idName);
-                                $idName = str_replace("/", "", $idName);
-                                $idName = str_replace("&", "", $idName);
+                            foreach ($group as $sname => $surl) {
+                                if (is_string($surl)) {
                             ?>
-                                <li>
-                                <strong><i class='fa fa-minus-square-o' data-toggle="collapse" data-target="#<?php echo $idName; ?>" onclick="toggleExpandCollapse(this);"></i> <?php echo $sname; ?></strong>
-                                    <ul class="list-unstyled collapse show" id="<?php echo $idName; ?>">
-                                    <?php
-                                    foreach($surl as $tname=>$turl)
-                                    {
-                                    ?>
-                                        <li><a href="<?php echo $root_url.$turl; ?>"><?php echo $tname; ?></a></li>
-                                    <?php    
-                                    }
-                                    ?>
-                                    </ul>
-                                </li>
+                                    <li><a href="<?php echo $root_url . $surl; ?>"><?php echo $sname; ?></a></li>
+                                <?php
+                                } else {
+                                    $idName = $sname;
+                                    $idName = str_replace(" ", "", $idName);
+                                    $idName = str_replace("/", "", $idName);
+                                    $idName = str_replace("&", "", $idName);
+                                ?>
+                                    <li>
+                                        <strong><i class='fa fa-minus-square-o' data-toggle="collapse" data-target="#<?php echo $idName; ?>" onclick="toggleExpandCollapse(this);"></i> <?php echo $sname; ?></strong>
+                                        <ul class="list-unstyled collapse show" id="<?php echo $idName; ?>">
+                                            <?php
+                                            foreach ($surl as $tname => $turl) {
+                                            ?>
+                                                <li><a href="<?php echo $root_url . $turl; ?>"><?php echo $tname; ?></a></li>
+                                            <?php
+                                            }
+                                            ?>
+                                        </ul>
+                                    </li>
                             <?php
+                                }
                             }
-                        }
-                        ?>
-                        </ul>                    
+                            ?>
+                        </ul>
                     </div>
-                <?php    
+                <?php
                 }
                 ?>
             </div>
-        <?php    
+        <?php
         }
         ?>
     </main>
 </body>
+
 </html>
