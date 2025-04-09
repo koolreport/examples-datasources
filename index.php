@@ -27,6 +27,24 @@
         i.classList.toggle('fa-plus-square-o');
         i.classList.toggle('fa-minus-square-o');
     }
+
+    function toggleExpandCollapseAll(i) {
+        let div = i.parentElement.parentElement;
+        let expandCollapseButtons = div.querySelectorAll('.expand-collapse');
+        expandCollapseButtons.forEach(function(btn) {
+            if (i.classList.contains('fa-plus-square-o')) {
+                if (btn.classList.contains('fa-plus-square-o')) {
+                    btn.click();
+                }
+            } else if (i.classList.contains('fa-minus-square-o')) {
+                if (btn.classList.contains('fa-minus-square-o')) {
+                    btn.click();
+                }
+            }
+        })
+        i.classList.toggle('fa-plus-square-o');
+        i.classList.toggle('fa-minus-square-o');
+    }
 </script>
 
 <body>
@@ -82,6 +100,7 @@
                 ?>
                     <div class="col-md-3 example-group col-sm-6">
                         <h5>
+                            <i class='fa fa-minus-square-o' data-toggle="collapse" onclick="toggleExpandCollapseAll(this);"></i>
                             <?php echo (strpos($group_name, "</i>") > 0) ? $group_name : "<i class='icon-layers'></i>$group_name"; ?></h5>
                         <ul class="list-unstyled">
                             <?php
@@ -97,7 +116,7 @@
                                     $idName = str_replace("&", "", $idName);
                                 ?>
                                     <li>
-                                        <strong><i class='fa fa-minus-square-o' data-toggle="collapse" data-target="#<?php echo $idName; ?>" onclick="toggleExpandCollapse(this);"></i> <?php echo $sname; ?></strong>
+                                        <strong><i class='fa fa-minus-square-o expand-collapse' data-toggle="collapse" data-target="#<?php echo $idName; ?>" onclick="toggleExpandCollapse(this);"></i> <?php echo $sname; ?></strong>
                                         <ul class="list-unstyled collapse show" id="<?php echo $idName; ?>">
                                             <?php
                                             foreach ($surl as $tname => $turl) {
