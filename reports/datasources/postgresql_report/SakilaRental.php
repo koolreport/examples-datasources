@@ -14,7 +14,7 @@ class SakilaRental extends KoolReport
     public function settings()
     {
         //Get default connection from config.php
-        $config = $GLOBALS['config'];
+        $config = getConfig();
 
         return array(
             "dataSources"=>array(
