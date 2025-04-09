@@ -32,7 +32,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <a id="baseUrl" class="navbar-brand" href="https://www.koolreport.com/examples">KoolReport Examples</a>
-        <a id="repoUrl" class="navbar-brand" href="https://github.com/koolreport/examples-processes">GitHub</a>
+        <a id="repoUrl" class="navbar-brand" href="https://github.com/koolreport/examples-datasources">GitHub</a>
         <ul id="topMenu" class="navbar-nav mr-auto">
 
         </ul>
