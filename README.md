@@ -4,6 +4,8 @@ This repository contains KoolReport examples for data source types
 
 * Demo: [https://www.koolreport.com/examples-datasources](https://www.koolreport.com/examples-datasources)
 
+![examples-datasource.png](examples-datasource.png)
+
 # Installation
 
 Clone or download the repository source code into your machine:
@@ -27,7 +29,7 @@ require_once "path/to/vendor/autoload.php";
 // require_once "path/to/koolreport/core/autoload.php";
 ```
 
-Finally, put the repository source code on your web server and serve it
+Finally, put the repository source code on your web server to serve it
 
 # Source code structure
 
