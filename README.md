@@ -4,7 +4,7 @@ This repository contains KoolReport examples for data source types
 
 * Demo: [https://www.koolreport.com/examples-datasources](https://www.koolreport.com/examples-datasources)
 
-![examples-datasource.png](examples-datasource.png)
+![examples-datasource](examples-datasource.png)
 
 # Installation
 
